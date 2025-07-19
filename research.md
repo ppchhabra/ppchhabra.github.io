@@ -17,8 +17,8 @@ full-width: true
 ### Papers Under Review / In Progress
 1. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns.
 2. **Chhabra PPS**. Impact of Platform Evaluation Mechanism on Crowdfunding Campaigns. 
-3. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Grant Delays and Future Innovative Activities. 
- - Finalist, **2019 Chan Hahn Best Paper Award**, OSCM Division, *Academy of Management*
+3. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Grant Delays and Future Innovative Activities.
+   - Finalist, **2019 Chan Hahn Best Paper Award**, OSCM Division, *Academy of Management*
 
 ### Miscellaneous Publications
 4. **Chhabra PPS**, Ganguli R (2010) Superconvergent Finite Element for Coupled Torsional-Flexural-Axial Vibration Analysis of Rotating Blades. *International Journal for Computational Methods in Engineering Science and Mechanics*, Vol. 11 (1), pp. 48-69.
