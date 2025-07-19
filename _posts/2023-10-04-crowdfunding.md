@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Designing Reward Structure for Crowdfunding Campaigns
-subtitle: Reject and Resubmit, Management Science (Job Market Paper)
+subtitle: Working Paper
 tags: [crowdfunding, rewards, reward structure, entrepreneurship]
 ---
 
