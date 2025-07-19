@@ -15,12 +15,9 @@ full-width: true
   * Supply Chain Management
   
 ### Papers Under Review / In Progress
-1. **Chhabra PPS**, Hora MS, Ramachandran K. [Designing Reward Structure for Crowdfunding Campaigns.](http://ssrn.com/abstract=3742853)
- - Status: Reject and Resubmit, *Management Science* (Job Market Paper)
+1. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns.
 2. **Chhabra PPS**. Impact of Platform Evaluation Mechanism on Crowdfunding Campaigns. 
- - Status: Work-in-Progress Project
 3. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Grant Delays and Future Innovative Activities. 
- - Status: Working Paper
  - Finalist, **2019 Chan Hahn Best Paper Award**, OSCM Division, *Academy of Management*
 
 ### Miscellaneous Publications
