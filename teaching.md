@@ -5,7 +5,7 @@ subtitle: Param Chhabra
 full-width: true
 ---
 
-I have been teaching Operations Management to Undergrad students since 2020. My teaching philosophy involves providing a stimulating environment where students with diverse backgrounds get an equal opportunity to clarify their doubts and learn to realize their full potential. 
+I teach the core Operations Management course to Undergrad students. My teaching philosophy involves providing a stimulating environment where students with diverse backgrounds get an equal opportunity to clarify their doubts and learn to realize their full potential. 
 <!--Here is my [Teaching Statement](https://drive.google.com/file/d/1HySroIrA78BWHwNt41104Z45hRUpCinM/view?usp=sharing).-->
 
 ### Teaching Experience
