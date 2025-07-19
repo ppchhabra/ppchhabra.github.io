@@ -16,7 +16,7 @@ I am an Assistant Professor of [Operations Management](https://apps.ualberta.ca/
 - [Designing the Best Reward Structure for Crowdfunding Campaigns](https://www.scheller.gatech.edu/centers-initiatives/business-analytics-center/research/posts/designing-the-best-reward-structure-for-crowdfunding-campaigns.html), Business Analytics Center, Scheller College of Business, February, 2020.
 
 ### Education
-* Ph.D. in Operations Management, [Georgia Tech Scheller College of Business](https://www.scheller.gatech.edu/index.html), Atlanta, Georgia, USA (2016-2022)
+* Ph.D. in Operations Management, [Georgia Tech Scheller College of Business](https://www.scheller.gatech.edu/index.html), Atlanta, Georgia, USA
 * M.E. in Aerospace Engineering, [Indian Institute of Science](https://www.iisc.ac.in/), Bangalore, India
 * B.Tech in Mechanical Engineering, [NIT Jalandhar](https://www.nitj.ac.in/), Jalandhar, India (Previously RECJ)
 
