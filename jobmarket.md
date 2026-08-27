@@ -25,14 +25,14 @@ My DSI talk is available [here](https://decisionsciences.pathable.co/meetings/vi
 -->
 
 ### Professional References
-**[Prof. Manpreet Hora](https://www.scheller.gatech.edu/directory/faculty/hora/index.html)** (Co-advisor)\\
-Professor of Operations Management\\
+**[Prof. Manpreet Hora](https://www.scheller.gatech.edu/directory/faculty/hora/index.html)** (Co-advisor) \\
+Professor of Operations Management \\
 Scheller College of Business, Georgia Institute of Technology
 
-**[Prof. Karthik Ramachandran](https://www.scheller.gatech.edu/directory/faculty/ramachandran/index.html)** (Co-advisor)\\
-Professor of Operations Management\\
+**[Prof. Karthik Ramachandran](https://www.scheller.gatech.edu/directory/faculty/ramachandran/index.html)** (Co-advisor) \\
+Professor of Operations Management \\
 Scheller College of Business, Georgia Institute of Technology
 
-**[Prof. Armann Ingolfsson](https://apps.ualberta.ca/directory/person/aingolfs)**\\
-Professor of Operations Management\\
+**[Prof. Armann Ingolfsson](https://apps.ualberta.ca/directory/person/aingolfs)** \\
+Professor of Operations Management \\
 Alberta School of Business, University of Alberta
