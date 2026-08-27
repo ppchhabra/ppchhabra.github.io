@@ -6,16 +6,33 @@ subtitle: Param Chhabra
 
 I am on the **2026-2027 Academic Job Market**. I will be attending *DSI 2026 Annual Conference*. Here are my [CV](https://drive.google.com/file/d/1Fu2OzbBZbp10vbxTjxKYcSF-b2y0LDkd/view?usp=sharing), [Research Statement](https://drive.google.com/file/d/1MaN-eJLWU3n8QYe6zc5hCCtrubrD0aVD/view?usp=sharing), and [Teaching Statement](https://drive.google.com/file/d/1HySroIrA78BWHwNt41104Z45hRUpCinM/view?usp=sharing). I can share my research papers on request.
 
+<!--
+### 2020 INFORMS Virtual Meeting
+
+**Title**: “*Designing Reward Structure for Crowdfunding Campaigns*” \\
+**Session**: Virtual Room **TD41** \\
+**Date**: November 10, 2020 \\
+**Time**: 4:30 pm to 5:45 pm EST (2nd talk)\\
+My INFORMS talk is available [here](https://www.dropbox.com/sh/ig352gyfa7vflld/AAD7PxvkSVBNLJgONbfF7w3Ra?dl=0).
+
+### DSI 2020 Annual Meeting
+
+**Title**: “*Designing Reward Structure for Crowdfunding Campaigns*” \\
+**Session**: Session **INPD6** \\
+**Date**: November 23, 2020 \\
+**Time**: 12:00 pm to 1:15 pm US Pacific Time (1st talk)\\
+My DSI talk is available [here](https://decisionsciences.pathable.co/meetings/virtual/3ydsffY9uN5SbFdM4) (2020 DSI Annual Conference login required).
+-->
 
 ### Professional References
-**[Prof. Manpreet Hora](https://www.scheller.gatech.edu/directory/faculty/hora/index.html)** (Co-advisor) \\
-Professor of Operations Management \\
+**[Prof. Manpreet Hora](https://www.scheller.gatech.edu/directory/faculty/hora/index.html)** (Co-advisor)<br>
+Professor of Operations Management<br>
 Scheller College of Business, Georgia Institute of Technology
 
-**[Prof. Karthik Ramachandran](https://www.scheller.gatech.edu/directory/faculty/ramachandran/index.html)** (Co-advisor) \\
-Professor of Operations Management \\
+**[Prof. Karthik Ramachandran](https://www.scheller.gatech.edu/directory/faculty/ramachandran/index.html)** (Co-advisor)<br>
+Professor of Operations Management<br>
 Scheller College of Business, Georgia Institute of Technology
 
-**[Prof. Armann Ingolfsson](https://apps.ualberta.ca/directory/person/aingolfs)** \\
-Professor of Operations Management \\
+**[Prof. Armann Ingolfsson](https://apps.ualberta.ca/directory/person/aingolfs)**<br>
+Professor of Operations Management<br>
 Alberta School of Business, University of Alberta
