@@ -18,7 +18,7 @@ full-width: true
 1. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Pendency and Future Innovation Activities. <ins>Status</ins>: Reject & Resubmit, _Management Science_.
 2. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns. <ins>Status</ins>: Major Revision, _IEEE Transactions on Engineering Management_.
 3. Kohli A, **Chhabra PPS**, Shah P, Kumthekar, N. Does disruption readiness affect technology adoption? The specific case of Artificial Intelligence. <ins>Status</ins>: Under reveiw, _Engineering Management Journal_.
-4. Huang C, **Chhabra PPS**. Natural Disasters and Innovation. Status: Preparing to submit.
+4. Huang C, **Chhabra PPS**. Natural Disasters and Innovation. <ins>Status</ins>: Preparing to submit.
 5. **Chhabra PPS**, Hora MS, Ramachandran K. The Impact of Waiting on Future Innovation Activities: The Role of Experience and Learning. <ins>Status</ins>: Work-in-progress.
 6. Siamionava K, **Chhabra PPS**, Ransbotham S. How Consumers Respond to Service Robots: Evidence from Restaurant Automation. <ins>Status</ins>: Work-in-progress.
 
