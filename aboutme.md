@@ -12,7 +12,7 @@ I am **Param Chhabra**. This is my [CV](https://drive.google.com/file/d/1Fu2OzbB
 
 I am an Assistant Professor of [Operations Management](https://apps.ualberta.ca/directory/person/chhabra3) at the University of Alberta's [School of Business](https://www.ualberta.ca/business/index.html). I conduct empirical research in New Product Development, Crowdfunding, AI implementation in Operations, and Innovation with a specific focus on improving the outcomes of entrepreneurs and inventors. I teach the core course *Operations Management* to undergraduate students at the Alberta School of Business.
 
-I have recently joined the AI Cenre for Decision Analytics (AI4DA) at the University of Alberta as the Director of Outreach.
+I have recently joined the [AI Cenre for Decision Analytics (AI4DA)](https://www.ualberta.ca/en/ai-centre-for-decision-analytics/index.html) at the University of Alberta as the Director of Outreach.
 
 #### Media Mention
 - [Designing the Best Reward Structure for Crowdfunding Campaigns](https://www.scheller.gatech.edu/centers-initiatives/business-analytics-center/research/posts/designing-the-best-reward-structure-for-crowdfunding-campaigns.html), Business Analytics Center, Scheller College of Business, February, 2020.
