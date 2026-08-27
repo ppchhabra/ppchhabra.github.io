@@ -10,7 +10,7 @@ full-width: true
   * New Product Development
   * Crowdfunding                       
   * Innovation and Entrepreneurship
-  * Operations of Online Platforms      
+  * AI Implementaion in Operations      
   * Interface of Operations, Finance, and Marketing     
   * Supply Chain Management
   
