@@ -15,7 +15,7 @@ full-width: true
   * Supply Chain Management
   
 ### Papers Under Review / In Progress
-1. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Pendency and Future Innovation Activities. <u>Status</u>: Reject \& Resubmit, _Management Science_.
+1. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Pendency and Future Innovation Activities. <u>Status</u>: Reject & Resubmit, _Management Science_.
 2. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns. Status: Major Revision, _IEEE Transactions on Engineering Management_.
 3. Kohli A, **Chhabra PPS**, Shah P, Kumthekar, N. Does disruption readiness affect technology adoption? The specific case of Artificial Intelligence. Status: Under reveiw, _Engineering Management Journal_.
 4. Huang C, **Chhabra PPS**. Natural Disasters and Innovation. Status: Preparing to submit.
