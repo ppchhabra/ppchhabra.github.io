@@ -16,11 +16,11 @@ full-width: true
   
 ### Papers Under Review / In Progress
 1. **Chhabra PPS**, Hora MS, Ramachandran K. Patent Pendency and Future Innovation Activities. <ins>Status</ins>: Reject & Resubmit, _Management Science_.
-2. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns. Status: Major Revision, _IEEE Transactions on Engineering Management_.
-3. Kohli A, **Chhabra PPS**, Shah P, Kumthekar, N. Does disruption readiness affect technology adoption? The specific case of Artificial Intelligence. Status: Under reveiw, _Engineering Management Journal_.
+2. **Chhabra PPS**, Hora MS, Ramachandran K. Designing Reward Structure for Crowdfunding Campaigns. <ins>Status</ins>: Major Revision, _IEEE Transactions on Engineering Management_.
+3. Kohli A, **Chhabra PPS**, Shah P, Kumthekar, N. Does disruption readiness affect technology adoption? The specific case of Artificial Intelligence. <ins>Status</ins>: Under reveiw, _Engineering Management Journal_.
 4. Huang C, **Chhabra PPS**. Natural Disasters and Innovation. Status: Preparing to submit.
-5. **Chhabra PPS**, Hora MS, Ramachandran K. The Impact of Waiting on Future Innovation Activities: The Role of Experience and Learning. Status: Work-in-progress.
-6. Siamionava K, **Chhabra PPS**, Ransbotham S. How Consumers Respond to Service Robots: Evidence from Restaurant Automation. Status: Work-in-progress.
+5. **Chhabra PPS**, Hora MS, Ramachandran K. The Impact of Waiting on Future Innovation Activities: The Role of Experience and Learning. <ins>Status</ins>: Work-in-progress.
+6. Siamionava K, **Chhabra PPS**, Ransbotham S. How Consumers Respond to Service Robots: Evidence from Restaurant Automation. <ins>Status</ins>: Work-in-progress.
 
 ### Miscellaneous Publications
 4. **Chhabra PPS**, Ganguli R (2010) Superconvergent Finite Element for Coupled Torsional-Flexural-Axial Vibration Analysis of Rotating Blades. *International Journal for Computational Methods in Engineering Science and Mechanics*, Vol. 11 (1), pp. 48-69.
