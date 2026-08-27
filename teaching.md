@@ -10,6 +10,8 @@ I teach the core Operations Management course to Undergrad students. My teaching
 
 ### Teaching Experience
 
+* Instructor for the *Operations Management* (undergrad) core course in Fall 2026.
+* Instructor for the *Operations Management* (undergrad) core course in Fall 2025.
 * Instructor for the *Operations Management* (undergrad) core course in Winter 2025.
 * Instructor for the *Operations Management* (undergrad) core course in Winter 2024.
 * Instructor for the *Operations Management* (undergrad) core course in Winter 2023.
