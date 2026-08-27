@@ -34,13 +34,18 @@ I have recently joined the [AI Cenre for Decision Analytics (AI4DA)](https://www
 - Winner, Science Day Paper Presentation Competition at DRDO - 2003 to 2005
 
 ### Service & Professional Activities
+- Track Chair
+  - DSI 2025 Annual Conference: Co-chaired the Project Management track with Dr. Mona Jabbari.
+  - POMS 2025 Annual Conference: Co-chaired the Product Innovation and Technology Management track with Dr. Lakshminarayana Nittala.
+  - POMS 2024 Annual Conference: Co-chaired the Product Innovation and Technology Management track with Dr. Sina Khorasani.
+  - DSI 2022 Annual Conference: Co-chaired the Innovation and New Product Development track with Dr. Morvarid Rahmani.
 - Session Chair
-  - POMS 2023 Annual Meeting: Chaired a session entitled ``Empirical Research in Innovation and Product Development'' in the Empirical Research in Operations Management track. 
+  - POMS 2023 Annual Conference: Chaired a session entitled ``Empirical Research in Innovation and Product Development'' in the Empirical Research in Operations Management track. 
   - INFORMS 2022 Annual Meeting: Chaired a session entitled ``Decision Making in Innovation Settings'' in the New Product Development track.
-  - POMS 2022 Annual Meeting: Chaired a session entitled ``Empirical Studies on Innovation Management'' in the PITM track.
-  - DSI 2021 Annual Meeting: Chaired a session entitled ``Business Analytics in Operations Management'' in the Business Analytics track.
-  - POMS 2021 Annual Meeting: Co-chair for the session entitled ``Entrepreneurship, Innovation and Crowdfunding'' with Dr. Morvarid Rahmani in the PITM track.
-  - POMS 2020 Annual Meeting: Co-chaired a session entitled ``Entrepreneurship, Innovation and Crowdfunding'' with Dr. Morvarid Rahmani in the PITM track (Finalized the session but the event got canceled due to COVID-19 pandemic).
+  - POMS 2022 Annual Conference: Chaired a session entitled ``Empirical Studies on Innovation Management'' in the PITM track.
+  - DSI 2021 Annual Conference: Chaired a session entitled ``Business Analytics in Operations Management'' in the Business Analytics track.
+  - POMS 2021 Annual Conference: Co-chair for the session entitled ``Entrepreneurship, Innovation and Crowdfunding'' with Dr. Morvarid Rahmani in the PITM track.
+  - POMS 2020 Annual Conference: Co-chaired a session entitled ``Entrepreneurship, Innovation and Crowdfunding'' with Dr. Morvarid Rahmani in the PITM track (Finalized the session but the event got canceled due to COVID-19 pandemic).
 - Assistant to Professor Cheryl Gaimon - June 2018 to July 2020
   - Provided support to Dr. Gaimon in her research activities and in her position as Department Editor, Production and Operations Management.
 - Editorial Support for OM e-Newsletter, Scheller College of Business - 2018 to 2020
