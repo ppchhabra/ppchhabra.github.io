@@ -6,9 +6,7 @@ cover-img: "/img/trial.png"
 full-width: true
 ---
 
-**A warm welcome!** 
-
-I am **Param Chhabra**. This is my [CV](https://drive.google.com/file/d/1Fu2OzbBZbp10vbxTjxKYcSF-b2y0LDkd/view?usp=sharing).
+**A warm welcome from Param Chhabra!** 
 
 I am an Assistant Professor of [Operations Management](https://apps.ualberta.ca/directory/person/chhabra3) at the University of Alberta's [School of Business](https://www.ualberta.ca/business/index.html). I conduct empirical research in New Product Development, Crowdfunding, AI implementation in Operations, and Innovation with a specific focus on improving the outcomes of entrepreneurs and inventors. I teach the core course *Operations Management* to undergraduate students at the Alberta School of Business.
 
