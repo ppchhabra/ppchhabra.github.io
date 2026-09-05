@@ -4,7 +4,6 @@ title: About Me
 subtitle: Param Chhabra
 cover-img: "/img/trial.png"
 full-width: true
-permalink: /
 ---
 
 **A warm welcome from Param Chhabra!** 
