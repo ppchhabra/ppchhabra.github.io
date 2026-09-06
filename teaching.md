@@ -10,20 +10,19 @@ I teach the core Operations Management course to Undergrad students. My teaching
 
 ### Teaching Experience
 
-* Instructor for the *Operations Management* (undergrad) core course in Fall 2026.
-* Instructor for the *Operations Management* (undergrad) core course in Fall 2025.
-* Instructor for the *Operations Management* (undergrad) core course in Winter 2025.
-* Instructor for the *Operations Management* (undergrad) core course in Winter 2024.
-* Instructor for the *Operations Management* (undergrad) core course in Winter 2023.
-* Instructor for the *Operations Management* (undergrad) core course in Winter 2022.
-* Instructor for the *Operations Management* (undergrad) core course in Spring 2020.
+* Instructor for the *Operations Management* core course in Fall 2026.
+* Instructor for the *Operations Management* core course in Fall 2025.
+* Instructor for the *Operations Management* core course in Winter 2025.
+* Instructor for the *Operations Management* core course in Winter 2024.
+* Instructor for the *Operations Management* core course in Winter 2023.
+* Instructor for the *Operations Management* core course in Winter 2022.
+* Instructor for the *Operations Management* core course in Spring 2020.
 
 ### Teaching Interests
   * Operations Management   
-  * New Product Development
+  * Product Development
   * Supply Chain Management
   * Business Analytics
-  * Product Design
   * Revenue Management and Pricing
   * Service Operations Management
 
