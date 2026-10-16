@@ -93,6 +93,9 @@
           const title = vcardData.match(/^TITLE.*:(.*)$/im);
           if (title && title[1].trim()) {
             document.getElementById('vcard-title').innerText = title[1].trim();
+            document.getElementById('vcard-title').style.display = 'block';
+          } else {
+            document.getElementById('vcard-title').style.display = 'none';
           }
 
           // Parse Subtitle (matches SUBTITLE, X-SUBTITLE, or NOTE)
