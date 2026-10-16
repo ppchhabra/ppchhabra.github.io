@@ -110,6 +110,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const title = vcardData.match(/^TITLE:(.*)$/m);
       if (title) document.getElementById('vcard-title').innerText = title[1].trim();
 
+      const title = vcardData.match(/^SUBTITLE:(.*)$/m);
+      if (title) document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
+
       const org = vcardData.match(/^ORG:(.*)$/m);
       if (org) document.getElementById('vcard-org').innerText = org[1].trim();
 
