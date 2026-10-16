@@ -90,6 +90,11 @@ Phone: +1(780)492-1145
   <div class="vcard-text" id="vcard-address">
     Loading address...
   </div>
+
+  <div class="vcard-label">WEBSITE</div>
+  <div class="vcard-text">
+    <a href="https://www.paramchhabra.com" target="_blank" rel="noopener noreferrer" style="color: #212529; font-weight: 600;">www.paramchhabra.com</a>
+  </div>
 </div>
 
 <script>
