@@ -36,14 +36,15 @@
   <div class="vcard-box">
     <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
 
-    <!-- Header Info -->
+    <!-- Header Info with Multi-Line Titles -->
     <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
-    <div class="vcard-sub" id="vcard-title">Assistant Professor of Operations Management</div>
-    <div class="vcard-sub" id="vcard-org">Director of Outreach, AI4DA</div>
-    <div class="vcard-sub">University of Alberta</div>
+    <div class="vcard-sub" id="vcard-title">
+      Assistant Professor of Operations Management<br>Director of Outreach, AI4DA
+    </div>
+    <div class="vcard-sub" id="vcard-org">University of Alberta</div>
 
-    <!-- Download link pointing directly to contact.vcf in the same folder -->
-    <a href="./contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
+    <!-- Download button -->
+    <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
 
     <!-- Row 1: Email & LinkedIn -->
     <div class="vcard-grid">
@@ -67,69 +68,76 @@
       Phone: +1 (780) 492-1145
     </div>
 
-    <!-- Website link at bottom -->
+    <!-- Website Link -->
     <div class="vcard-label">WEBSITE</div>
-    <div class="vcard-website" id="vcard-website">
-      <a href="https://www.paramchhabra.com" target="_blank" rel="noopener noreferrer" id="vcard-web-link">www.paramchhabra.com</a>
+    <div class="vcard-website">
+      <a id="vcard-web-link" href="https://www.paramchhabra.com" target="_blank" rel="noopener noreferrer">www.paramchhabra.com</a>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Fetch contact.vcf using explicit relative path within card/
-      fetch('./contact.vcf')
+      fetch('contact.vcf')
         .then(response => {
-          if (!response.ok) throw new Error("HTTP error " + response.status);
+          if (!response.ok) throw new Error("VCF load failed");
           return response.text();
         })
         .then(vcardData => {
           // Parse Name
-          const fn = vcardData.match(/^FN:(.*)$/m);
-          if (fn) document.getElementById('vcard-fn').innerText = fn[1].trim();
+          const fn = vcardData.match(/^FN:(.*)$/im);
+          if (fn && fn[1].trim()) document.getElementById('vcard-fn').innerText = fn[1].trim();
 
-          // Parse Title & Organization
-          const title = vcardData.match(/^TITLE:(.*)$/m);
-          if (title) document.getElementById('vcard-title').innerText = title[1].trim();
-
-          const org = vcardData.match(/^ORG:(.*)$/m);
-          if (org) document.getElementById('vcard-org').innerText = org[1].trim();
+          // Parse Title (convert '\n' or '&' into <br> for newline rendering)
+          const title = vcardData.match(/^TITLE:(.*)$/im);
+          if (title && title[1].trim()) {
+            const formattedTitle = title[1].trim()
+              .replace(/\\n/g, '<br>')
+              .replace(/\s*&\s*/g, '<br>');
+            document.getElementById('vcard-title').innerHTML = formattedTitle;
+          }
 
           // Parse Email
-          const email = vcardData.match(/^EMAIL.*:(.*)$/m);
-          if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
+          const email = vcardData.match(/^EMAIL.*:(.*)$/im);
+          if (email && email[1].trim()) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
 
           // Parse Website
-          const website = vcardData.match(/^URL;(TYPE=WORK|TYPE=Website|WORK):(.*)$/m);
-          if (website) {
+          const website = vcardData.match(/^URL;(TYPE=WORK|TYPE=Website|WORK):(.*)$/im);
+          if (website && website[2].trim()) {
             const webUrl = website[2].trim();
             const webLinkEl = document.getElementById('vcard-web-link');
             webLinkEl.href = webUrl;
             webLinkEl.innerText = webUrl.replace(/^https?:\/\//, '');
           }
 
-          // Parse Social & Academic URLs
-          const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/m);
-          if (linkedin) document.getElementById('vcard-linkedin').href = linkedin[1].trim();
+          // Parse Social & Academic Links safely
+          const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/im);
+          if (linkedin && linkedin[1].trim()) {
+            document.getElementById('vcard-linkedin').href = linkedin[1].trim();
+          }
 
-          const faculty = vcardData.match(/^URL;TYPE=Faculty:(.*)$/m);
-          if (faculty) document.getElementById('vcard-faculty').href = faculty[1].trim();
+          const faculty = vcardData.match(/^URL;TYPE=Faculty:(.*)$/im);
+          if (faculty && faculty[1].trim()) {
+            document.getElementById('vcard-faculty').href = faculty[1].trim();
+          }
 
-          const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/m);
-          if (ai4da) document.getElementById('vcard-ai4da').href = ai4da[1].trim();
+          const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/im);
+          if (ai4da && ai4da[1].trim()) {
+            document.getElementById('vcard-ai4da').href = ai4da[1].trim();
+          }
 
           // Parse Address & Phone
-          const adrMatch = vcardData.match(/^ADR.*:(.*)$/m);
-          const telMatch = vcardData.match(/^TEL.*:(.*)$/m);
+          const adrMatch = vcardData.match(/^ADR.*:(.*)$/im);
+          const telMatch = vcardData.match(/^TEL.*:(.*)$/im);
           
           let addressHTML = "";
-          if (adrMatch) {
+          if (adrMatch && adrMatch[1].trim()) {
             addressHTML = adrMatch[1]
               .split(';')
               .map(s => s.trim())
               .filter(Boolean)
               .join('<br>');
           }
-          if (telMatch) {
+          if (telMatch && telMatch[1].trim()) {
             addressHTML += (addressHTML ? "<br>" : "") + "Phone: " + telMatch[1].trim();
           }
           if (addressHTML) {
@@ -137,7 +145,7 @@
           }
         })
         .catch(err => {
-          console.log("Card initialized with default links:", err);
+          console.log("Using default HTML links:", err);
         });
     });
   </script>
