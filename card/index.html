@@ -38,9 +38,8 @@
 
     <!-- Header Info -->
     <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
-    <div class="vcard-sub" id="vcard-title">
-      Assistant Professor of Operations Management<br>Director of Outreach, AI4DA
-    </div>
+    <div class="vcard-sub" id="vcard-title-1">Assistant Professor of Operations Management</div>
+    <div class="vcard-sub" id="vcard-title-2">Director of Outreach, AI4DA</div>
     <div class="vcard-sub" id="vcard-org">University of Alberta</div>
 
     <!-- Download Button -->
@@ -87,15 +86,25 @@
           const fn = vcardData.match(/^FN:(.*)$/im);
           if (fn && fn[1].trim()) document.getElementById('vcard-fn').innerText = fn[1].trim();
 
-          // Parse Title (converts literal \n, escaped \n, or comma splits into <br>)
+          // Parse Title into distinct lines
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
-            const formattedTitle = title[1].trim()
-              .replace(/\\n/g, '<br>')
-              .replace(/\n/g, '<br>')
-              .replace(/,\s*Director/g, '<br>Director');
-            
-            document.getElementById('vcard-title').innerHTML = formattedTitle;
+            const rawTitle = title[1].trim();
+            if (rawTitle.includes(',')) {
+              const parts = rawTitle.split(',');
+              document.getElementById('vcard-title-1').innerText = parts[0].trim();
+              document.getElementById('vcard-title-2').innerText = parts.slice(1).join(',').trim();
+            } else if (rawTitle.includes('\\n')) {
+              const parts = rawTitle.split('\\n');
+              document.getElementById('vcard-title-1').innerText = parts[0].trim();
+              document.getElementById('vcard-title-2').innerText = parts.slice(1).join(' ').trim();
+            }
+          }
+
+          // Parse Organization
+          const org = vcardData.match(/^ORG:(.*)$/im);
+          if (org && org[1].trim()) {
+            document.getElementById('vcard-org').innerText = org[1].trim().split(';')[0];
           }
 
           // Parse Email
