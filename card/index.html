@@ -90,19 +90,21 @@
           }
 
           // Parse Main Title
-          const title = vcardData.match(/^TITLE.*:(.*)$/im);
-          if (title && title[1].trim()) {
-            document.getElementById('vcard-title').innerText = title[1].trim();
-            document.getElementById('vcard-title').style.display = 'block';
-          } else {
-            document.getElementById('vcard-title').style.display = 'none';
+          const titleMatch = vcardData.match(/^TITLE[;:]?\s*(.*)$/im);
+          if (titleMatch && titleMatch[1].trim()) {
+            const cleanTitle = titleMatch[1].replace(/^:[^\s]*/, '').replace(/^:/, '').trim();
+            document.getElementById('vcard-title').innerText = cleanTitle;
           }
-
-          // Parse Subtitle (matches SUBTITLE, X-SUBTITLE, or NOTE)
-          const subtitle = vcardData.match(/^(?:SUBTITLE|X-SUBTITLE|NOTE)(?:;[^:]*)?:(.*)$/im);
-          if (subtitle && subtitle[1].trim()) {
-            document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
-            document.getElementById('vcard-subtitle').style.display = 'block';
+          
+          // Parse Subtitle (matches SUBTITLE, X-SUBTITLE, or NOTE cleanly)
+          const subtitleMatch = vcardData.match(/^(?:SUBTITLE|X-SUBTITLE|NOTE)[;:]?\s*(.*)$/im);
+          if (subtitleMatch && subtitleMatch[1].trim()) {
+            // Strip any lingering field prefix/colon if present
+            let cleanSubtitle = subtitleMatch[1].replace(/^:[^\s]*/, '').replace(/^:/, '').trim();
+            
+            const subEl = document.getElementById('vcard-subtitle');
+            subEl.innerText = cleanSubtitle;
+            subEl.style.display = 'block';
           } else {
             document.getElementById('vcard-subtitle').style.display = 'none';
           }
