@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Prevent cached responses when updating contact.vcf -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <title>Param Chhabra | Contact</title>
+  <title>Contact Card</title>
   <link rel="stylesheet" href="../css/main.css">
   <style>
     body {
@@ -39,64 +40,61 @@
 <body>
 
   <div class="vcard-box">
-    <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
+    <img src="../img/squaremug.png" alt="Profile" class="vcard-img">
 
-    <!-- Header Info -->
-    <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
-    <div class="vcard-sub" id="vcard-title">
-      Assistant Professor of Operations Management<br>Director of Outreach, AI4DA
-    </div>
-    <div class="vcard-sub" id="vcard-org">University of Alberta</div>
+    <!-- Header Info (Blank placeholders populated by contact.vcf) -->
+    <div class="vcard-title" id="vcard-fn"></div>
+    <div class="vcard-sub" id="vcard-title"></div>
+    <div class="vcard-sub" id="vcard-org"></div>
 
     <!-- Download Button -->
-    <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
+    <a href="card/contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
 
     <!-- Row 1: Email & LinkedIn -->
     <div class="vcard-grid">
-      <a id="vcard-email" href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
-      <a id="vcard-linkedin" href="https://www.linkedin.com/in/param-chhabra" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
+      <a id="vcard-email" href="#" class="vcard-btn vcard-btn-outline">EMAIL</a>
+      <a id="vcard-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
     </div>
 
     <!-- Row 2: AI4DA & Faculty Page -->
     <div class="vcard-grid">
-      <a id="vcard-ai4da" href="https://www.ualberta.ca/en/ai-centre-for-decision-analytics/research/index.html" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
-      <a id="vcard-faculty" href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+      <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
+      <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
     </div>
 
     <!-- Office & Address -->
     <div class="vcard-label">OFFICE // ADDRESS</div>
-    <div class="vcard-text" id="vcard-address">
-      Alberta School of Business<br>
-      University of Alberta<br>
-      3-30G Business Building, 11203 Saskatchewan Drive NW<br>
-      Edmonton AB, Canada T6G 2R6<br>
-      Phone: +1 (780) 492-1145
-    </div>
+    <div class="vcard-text" id="vcard-address"></div>
 
     <!-- Website Link -->
     <div class="vcard-label">WEBSITE</div>
     <div class="vcard-website">
-      <a id="vcard-web-link" href="https://www.paramchhabra.com" target="_blank" rel="noopener noreferrer">www.paramchhabra.com</a>
+      <a id="vcard-web-link" href="#" target="_blank" rel="noopener noreferrer"></a>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('contact.vcf?v=' + new Date().getTime())
+      // Fetch contact.vcf dynamically bypassing browser caching
+      fetch('card/contact.vcf?v=' + new Date().getTime())
         .then(response => {
-          if (!response.ok) throw new Error("VCF load failed");
+          if (!response.ok) throw new Error("Could not load contact.vcf file.");
           return response.text();
         })
         .then(vcardData => {
-          // Parse Name
+          // Parse Name (FN)
           const fn = vcardData.match(/^FN:(.*)$/im);
-          if (fn && fn[1].trim()) document.getElementById('vcard-fn').innerText = fn[1].trim();
+          if (fn && fn[1].trim()) {
+            document.getElementById('vcard-fn').innerText = fn[1].trim();
+            document.title = fn[1].trim() + " | Contact";
+          }
 
-          // Parse Title: Splits at semicolons (;) or commas (,) into <br> line breaks
+          // Parse Title (Splits at semicolons ';' or '\n' into line breaks)
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
             const formattedTitle = title[1].trim()
-              .split(/[;]+/)
+              .replace(/\\n/g, ';')
+              .split(';')
               .map(t => t.trim())
               .filter(Boolean)
               .join('<br>');
@@ -104,7 +102,7 @@
             document.getElementById('vcard-title').innerHTML = formattedTitle;
           }
 
-          // Parse Organization
+          // Parse Organization (ORG)
           const org = vcardData.match(/^ORG:(.*)$/im);
           if (org && org[1].trim()) {
             document.getElementById('vcard-org').innerText = org[1].trim().split(';')[0];
@@ -112,9 +110,11 @@
 
           // Parse Email
           const email = vcardData.match(/^EMAIL.*:(.*)$/im);
-          if (email && email[1].trim()) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
+          if (email && email[1].trim()) {
+            document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
+          }
 
-          // Parse Website
+          // Parse Website URL
           const website = vcardData.match(/^URL;(TYPE=WORK|TYPE=Website|WORK):(.*)$/im);
           if (website && website[2].trim()) {
             const webUrl = website[2].trim();
@@ -123,7 +123,7 @@
             webLinkEl.innerText = webUrl.replace(/^https?:\/\//, '');
           }
 
-          // Parse Social Links
+          // Parse Custom Action Button URLs
           const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/im);
           if (linkedin && linkedin[1].trim()) {
             document.getElementById('vcard-linkedin').href = linkedin[1].trim();
@@ -139,7 +139,7 @@
             document.getElementById('vcard-ai4da').href = ai4da[1].trim();
           }
 
-          // Parse Address & Phone
+          // Parse Address & Phone Number
           const adrMatch = vcardData.match(/^ADR.*:(.*)$/im);
           const telMatch = vcardData.match(/^TEL.*:(.*)$/im);
           
@@ -159,7 +159,7 @@
           }
         })
         .catch(err => {
-          console.log("Using default HTML links:", err);
+          console.error("Error parsing vCard file:", err);
         });
     });
   </script>
