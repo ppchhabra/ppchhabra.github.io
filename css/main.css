@@ -786,3 +786,103 @@ pre {
   font-style: italic;
   font-size: 16px;
 }
+
+/* --- Contact Card Component --- */
+
+.vcard-box {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 28px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  max-width: 440px;
+  margin-top: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.vcard-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.vcard-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  color: #212529 !important;
+}
+
+.vcard-sub {
+  color: #495057;
+  font-size: 1.05rem;
+  margin: 4px 0;
+  line-height: 1.35;
+}
+
+.vcard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 0;
+  text-align: center;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.vcard-btn-primary {
+  background-color: #212529;
+  color: #ffffff !important;
+  border: 1px solid #212529;
+}
+
+.vcard-btn-primary:hover {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.vcard-btn-outline {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  color: #212529 !important;
+}
+
+.vcard-btn-outline:hover {
+  background-color: #e9ecef;
+}
+
+.vcard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.vcard-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.vcard-text {
+  font-size: 1rem;
+  color: #495057;
+  line-height: 1.55;
+  margin-top: 10px;
+}
