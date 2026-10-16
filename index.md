@@ -50,6 +50,7 @@ I have recently joined the [AI Cenre for Decision Analytics (AI4DA)](https://www
 - Reviewer for AOM (annual meeting), DSI (annual meeting)
 - Member of INFORMS, M&SOM, POMS, AOM, and DSI
 
+<!--
 ### Contact Details
 ![Param](img/squaremug.png){: width="300" height="300"}
 
@@ -59,3 +60,117 @@ University of Alberta\\
 AB, Canada T6G 2R6\\
 Email: [param.chhabra@ualberta.ca](mailto: param.chhabra@ualberta.ca)\\
 Phone: +1(780)492-1145
+-->
+
+### Contact Details
+
+<style>
+.vcard-box {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 420px;
+  margin-top: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.vcard-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.vcard-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.vcard-sub {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+
+.vcard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.vcard-btn-primary {
+  background-color: #fecb00;
+  color: #000000 !important;
+}
+
+.vcard-btn-outline {
+  background-color: transparent;
+  border: 1px solid #fecb00;
+  color: #fecb00 !important;
+}
+
+.vcard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.vcard-label {
+  font-size: 0.75rem;
+  color: #777777;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.vcard-text {
+  font-size: 0.85rem;
+  color: #cccccc;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+</style>
+
+<div class="vcard-box">
+  <img src="img/squaremug.png" alt="Param Chhabra" class="vcard-img">
+
+  <div class="vcard-title">PARAM CHHABRA</div>
+  <div class="vcard-sub">Assistant Professor of Operations Management</div>
+  <div class="vcard-sub">Director of Outreach, AI4DA</div>
+  <div class="vcard-sub">University of Alberta</div>
+
+  <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
+
+  <div class="vcard-grid">
+    <a href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
+    <a href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+  </div>
+
+  <div class="vcard-label">OFFICE // ADDRESS</div>
+  <div class="vcard-text">
+    Alberta School of Business<br>
+    University of Alberta<br>
+    3-30G Business Building, 11203 Saskatchewan Drive NW<br>
+    Edmonton AB, Canada T6G 2R6<br>
+    Phone: +1 (780) 492-1145
+  </div>
+</div>
