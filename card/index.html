@@ -83,20 +83,20 @@
         })
         .then(vcardData => {
           // Parse Name (FN)
-          const fn = vcardData.match(/^FN:(.*)$/im);
+          const fn = vcardData.match(/^FN.*:(.*)$/im);
           if (fn && fn[1].trim()) {
             document.getElementById('vcard-fn').innerText = fn[1].trim();
             document.title = fn[1].trim() + " | Contact";
           }
 
           // Parse Main Title
-          const title = vcardData.match(/^TITLE:(.*)$/im);
+          const title = vcardData.match(/^TITLE.*:(.*)$/im);
           if (title && title[1].trim()) {
             document.getElementById('vcard-title').innerText = title[1].trim();
           }
 
-          // Parse Subtitle (X-SUBTITLE, NOTE, or TITLE2)
-          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE|TITLE2):(.*)$/im);
+          // Parse Subtitle / Note (flexible match for NOTE or X-SUBTITLE with optional parameters)
+          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE|TITLE2)(?:;[^:]*)?:(.*)$/im);
           if (subtitle && subtitle[1].trim()) {
             document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
             document.getElementById('vcard-subtitle').style.display = 'block';
@@ -105,7 +105,7 @@
           }
 
           // Parse Organization (ORG)
-          const org = vcardData.match(/^ORG:(.*)$/im);
+          const org = vcardData.match(/^ORG.*:(.*)$/im);
           if (org && org[1].trim()) {
             document.getElementById('vcard-org').innerText = org[1].trim().split(';')[0];
           }
