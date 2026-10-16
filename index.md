@@ -8,7 +8,7 @@ full-width: true
 
 **A warm welcome to my webpage!** 
 
-I am an Assistant Professor of [Operations Management](https://apps.ualberta.ca/directory/person/chhabra3) at the University of Alberta's [School of Business](https://www.ualberta.ca/business/index.html). I conduct empirical research in New Product Development, Crowdfunding, AI implementation in Operations, and Innovation with a specific focus on improving the outcomes of entrepreneurs and inventors. I teach the core course *Operations Management* to undergraduate students at the Alberta School of Business.
+My name is Param Chhabra, and I am an Assistant Professor of [Operations Management](https://apps.ualberta.ca/directory/person/chhabra3) at the University of Alberta's [School of Business](https://www.ualberta.ca/business/index.html). I conduct empirical research in New Product Development, Crowdfunding, AI implementation in Operations, and Innovation with a specific focus on improving the outcomes of entrepreneurs and inventors. I teach the core course *Operations Management* to undergraduate students at the Alberta School of Business.
 
 I have recently joined the [AI Cenre for Decision Analytics (AI4DA)](https://www.ualberta.ca/en/ai-centre-for-decision-analytics/index.html) at the University of Alberta as the Director of Outreach.
 
