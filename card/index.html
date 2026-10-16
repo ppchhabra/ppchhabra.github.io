@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Cache Control Meta Tags -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -94,8 +95,8 @@
             document.getElementById('vcard-title').innerText = title[1].trim();
           }
 
-          // Parse Subtitle from NOTE
-          const subtitle = vcardData.match(/^(?:NOTE|X-SUBTITLE)(?:;[^:]*)?:(.*)$/im);
+          // Parse Subtitle (matches SUBTITLE, X-SUBTITLE, or NOTE)
+          const subtitle = vcardData.match(/^(?:SUBTITLE|X-SUBTITLE|NOTE)(?:;[^:]*)?:(.*)$/im);
           if (subtitle && subtitle[1].trim()) {
             document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
             document.getElementById('vcard-subtitle').style.display = 'block';
