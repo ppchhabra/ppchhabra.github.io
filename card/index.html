@@ -36,20 +36,22 @@
   <div class="vcard-box">
     <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
 
-    <!-- Dynamically loaded fields -->
+    <!-- Header Info -->
     <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
     <div class="vcard-sub" id="vcard-title">Assistant Professor of Operations Management</div>
-    <div class="vcard-sub" id="vcard-org">University of Alberta</div>
+    <div class="vcard-sub" id="vcard-org">Director of Outreach, AI4DA</div>
+    <div class="vcard-sub">University of Alberta</div>
 
-    <!-- Download link -->
-    <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
+    <!-- Download link pointing directly to contact.vcf in the same folder -->
+    <a href="./contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
 
-    <!-- Action Buttons -->
+    <!-- Row 1: Email & LinkedIn -->
     <div class="vcard-grid">
       <a id="vcard-email" href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
       <a id="vcard-linkedin" href="https://www.linkedin.com/in/param-chhabra" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
     </div>
 
+    <!-- Row 2: AI4DA & Faculty Page -->
     <div class="vcard-grid">
       <a id="vcard-ai4da" href="https://www.ualberta.ca/en/ai-centre-for-decision-analytics/research/index.html" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
       <a id="vcard-faculty" href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
@@ -74,9 +76,10 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('contact.vcf')
+      // Fetch contact.vcf using explicit relative path within card/
+      fetch('./contact.vcf')
         .then(response => {
-          if (!response.ok) throw new Error("VCF response not ok");
+          if (!response.ok) throw new Error("HTTP error " + response.status);
           return response.text();
         })
         .then(vcardData => {
@@ -95,7 +98,7 @@
           const email = vcardData.match(/^EMAIL.*:(.*)$/m);
           if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
 
-          // Parse Website URL
+          // Parse Website
           const website = vcardData.match(/^URL;(TYPE=WORK|TYPE=Website|WORK):(.*)$/m);
           if (website) {
             const webUrl = website[2].trim();
@@ -114,7 +117,7 @@
           const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/m);
           if (ai4da) document.getElementById('vcard-ai4da').href = ai4da[1].trim();
 
-          // Flexible Address & Phone Parser
+          // Parse Address & Phone
           const adrMatch = vcardData.match(/^ADR.*:(.*)$/m);
           const telMatch = vcardData.match(/^TEL.*:(.*)$/m);
           
@@ -134,7 +137,7 @@
           }
         })
         .catch(err => {
-          console.warn("Using default static fallback content as vcf was not parsed yet:", err);
+          console.log("Card initialized with default links:", err);
         });
     });
   </script>
