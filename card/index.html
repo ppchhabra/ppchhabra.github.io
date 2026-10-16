@@ -21,7 +21,7 @@
       width: 100%;
     }
     .vcard-website {
-      margin-top: 10px;
+      margin-top: 6px;
       font-size: 0.95rem;
       font-weight: 600;
     }
@@ -37,41 +37,48 @@
     <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
 
     <!-- Dynamically loaded fields -->
-    <div class="vcard-title" id="vcard-fn">LOADING...</div>
-    <div class="vcard-sub" id="vcard-title"></div>
-    <div class="vcard-sub" id="vcard-org"></div>
+    <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
+    <div class="vcard-sub" id="vcard-title">Assistant Professor of Operations Management</div>
+    <div class="vcard-sub" id="vcard-org">University of Alberta</div>
 
     <!-- Download link -->
     <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
 
     <!-- Action Buttons -->
     <div class="vcard-grid">
-      <a id="vcard-email" href="#" class="vcard-btn vcard-btn-outline">EMAIL</a>
-      <a id="vcard-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
+      <a id="vcard-email" href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
+      <a id="vcard-linkedin" href="https://www.linkedin.com/in/param-chhabra" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
     </div>
 
     <div class="vcard-grid">
-      <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
-      <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+      <a id="vcard-ai4da" href="https://www.ualberta.ca/en/ai-centre-for-decision-analytics/research/index.html" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
+      <a id="vcard-faculty" href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
     </div>
 
     <!-- Office & Address -->
     <div class="vcard-label">OFFICE // ADDRESS</div>
     <div class="vcard-text" id="vcard-address">
-      Loading address...
+      Alberta School of Business<br>
+      University of Alberta<br>
+      3-30G Business Building, 11203 Saskatchewan Drive NW<br>
+      Edmonton AB, Canada T6G 2R6<br>
+      Phone: +1 (780) 492-1145
     </div>
 
     <!-- Website link at bottom -->
     <div class="vcard-label">WEBSITE</div>
     <div class="vcard-website" id="vcard-website">
-      <a href="#" target="_blank" rel="noopener noreferrer" id="vcard-web-link">Loading website...</a>
+      <a href="https://www.paramchhabra.com" target="_blank" rel="noopener noreferrer" id="vcard-web-link">www.paramchhabra.com</a>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch('contact.vcf')
-        .then(response => response.text())
+        .then(response => {
+          if (!response.ok) throw new Error("VCF response not ok");
+          return response.text();
+        })
         .then(vcardData => {
           // Parse Name
           const fn = vcardData.match(/^FN:(.*)$/m);
@@ -89,7 +96,7 @@
           if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
 
           // Parse Website URL
-          const website = vcardData.match(/^URL;TYPE=(WORK|Website):(.*)$/m);
+          const website = vcardData.match(/^URL;(TYPE=WORK|TYPE=Website|WORK):(.*)$/m);
           if (website) {
             const webUrl = website[2].trim();
             const webLinkEl = document.getElementById('vcard-web-link');
@@ -107,22 +114,28 @@
           const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/m);
           if (ai4da) document.getElementById('vcard-ai4da').href = ai4da[1].trim();
 
-          // Parse Address & Phone
-          const adr = vcardData.match(/^ADR.*:;;(.*)$/m);
-          const tel = vcardData.match(/^TEL.*:(.*)$/m);
+          // Flexible Address & Phone Parser
+          const adrMatch = vcardData.match(/^ADR.*:(.*)$/m);
+          const telMatch = vcardData.match(/^TEL.*:(.*)$/m);
           
           let addressHTML = "";
-          if (adr) {
-            addressHTML += adr[1].split(';').filter(Boolean).join('<br>');
+          if (adrMatch) {
+            addressHTML = adrMatch[1]
+              .split(';')
+              .map(s => s.trim())
+              .filter(Boolean)
+              .join('<br>');
           }
-          if (tel) {
-            addressHTML += "<br>Phone: " + tel[1].trim();
+          if (telMatch) {
+            addressHTML += (addressHTML ? "<br>" : "") + "Phone: " + telMatch[1].trim();
           }
           if (addressHTML) {
             document.getElementById('vcard-address').innerHTML = addressHTML;
           }
         })
-        .catch(err => console.error("Error reading contact.vcf file:", err));
+        .catch(err => {
+          console.warn("Using default static fallback content as vcf was not parsed yet:", err);
+        });
     });
   </script>
 
