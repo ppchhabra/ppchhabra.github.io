@@ -68,36 +68,37 @@ Phone: +1(780)492-1145
 .vcard-box {
   background-color: #f8f9fa;
   color: #212529;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid #e9ecef;
   border-radius: 8px;
-  max-width: 420px;
+  max-width: 440px;
   margin-top: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .vcard-img {
   width: 100%;
-  max-height: 320px;
+  max-height: 340px;
   object-fit: cover;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   border-radius: 6px;
   border: 1px solid #dee2e6;
 }
 
 .vcard-title {
-  font-size: 1.6rem;
+  font-size: 1.9rem; /* Increased from 1.6rem */
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin: 0 0 4px 0;
+  margin: 0 0 6px 0;
   text-transform: uppercase;
   color: #212529 !important;
 }
 
 .vcard-sub {
   color: #495057;
-  font-size: 0.9rem;
-  margin: 2px 0;
+  font-size: 1.05rem; /* Increased from 0.9rem */
+  margin: 4px 0;
+  line-height: 1.35;
 }
 
 .vcard-btn {
@@ -105,14 +106,14 @@ Phone: +1(780)492-1145
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 12px 0;
+  padding: 14px 0;
   text-align: center;
   text-decoration: none !important;
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.95rem; /* Increased from 0.85rem */
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 12px;
   border-radius: 4px;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
@@ -142,24 +143,24 @@ Phone: +1(780)492-1145
 .vcard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .vcard-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem; /* Increased from 0.75rem */
   color: #6c757d;
-  margin-top: 20px;
+  margin-top: 24px;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .vcard-text {
-  font-size: 0.95rem;
+  font-size: 1rem; /* Increased from 0.88rem */
   color: #495057;
-  line-height: 1.5;
-  margin-top: 8px;
+  line-height: 1.55;
+  margin-top: 10px;
 }
 </style>
 
