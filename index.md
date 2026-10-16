@@ -82,8 +82,8 @@ Phone: +1(780)492-1145
   </div>
 
   <div class="vcard-grid">
-    <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
     <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+    <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
   </div>
 
   <div class="vcard-label">OFFICE // ADDRESS</div>
