@@ -95,10 +95,11 @@
             document.getElementById('vcard-title').innerText = title[1].trim();
           }
 
-          // Parse Subtitle (checks X-SUBTITLE or NOTE field in vcard)
-          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE):(.*)$/im);
+          // Parse Subtitle (X-SUBTITLE, NOTE, or TITLE2)
+          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE|TITLE2):(.*)$/im);
           if (subtitle && subtitle[1].trim()) {
             document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
+            document.getElementById('vcard-subtitle').style.display = 'block';
           } else {
             document.getElementById('vcard-subtitle').style.display = 'none';
           }
