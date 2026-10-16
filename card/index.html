@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Cache Control Meta Tags to prevent stale cached versions -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -83,7 +82,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Append query parameter ?v=timestamp to force fetching fresh vcard
       fetch('contact.vcf?v=' + new Date().getTime())
         .then(response => {
           if (!response.ok) throw new Error("VCF load failed");
@@ -94,13 +92,15 @@
           const fn = vcardData.match(/^FN:(.*)$/im);
           if (fn && fn[1].trim()) document.getElementById('vcard-fn').innerText = fn[1].trim();
 
-          // Parse Title: converts literal \n, escaped \\n, or commas into <br> line breaks
+          // Parse Title: Splits at semicolons (;) or commas (,) into <br> line breaks
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
             const formattedTitle = title[1].trim()
-              .replace(/\\n/g, '<br>')
-              .replace(/\n/g, '<br>');
-            
+              .split(/[;]+/)
+              .map(t => t.trim())
+              .filter(Boolean)
+              .join('<br>');
+
             document.getElementById('vcard-title').innerHTML = formattedTitle;
           }
 
