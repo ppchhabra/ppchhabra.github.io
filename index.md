@@ -74,10 +74,17 @@ Phone: +1(780)492-1145
 
   <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
 
+  <!-- Row 1: Email & LinkedIn -->
   <div class="vcard-grid">
     <a href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
+    <a href="https://www.linkedin.com/in/paramchhabra/" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
+  </div>
+
+  <!-- Row 2: AI4DA & Faculty Page -->
+  <div class="vcard-grid">
     <a href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
   </div>
+    <a href="https://www.ualberta.ca/en/ai-centre-for-decision-analytics/research/index.html" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
 
   <div class="vcard-label">OFFICE // ADDRESS</div>
   <div class="vcard-text">
