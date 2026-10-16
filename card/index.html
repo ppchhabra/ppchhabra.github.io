@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Param Chhabra | Contact</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    .vcard-box {
+      margin-top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="vcard-box">
+    <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
+
+    <!-- Dynamically loaded fields -->
+    <div class="vcard-title" id="vcard-fn">LOADING...</div>
+    <div class="vcard-sub" id="vcard-title"></div>
+    <div class="vcard-sub" id="vcard-org"></div>
+
+    <!-- Links directly to the root contact.vcf -->
+    <a href="../contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
+
+    <!-- Action Buttons -->
+    <div class="vcard-grid">
+      <a id="vcard-email" href="#" class="vcard-btn vcard-btn-outline">EMAIL</a>
+      <a id="vcard-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
+    </div>
+
+    <div class="vcard-grid">
+      <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
+      <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+    </div>
+
+    <div class="vcard-label">OFFICE // ADDRESS</div>
+    <div class="vcard-text" id="vcard-address">
+      Loading address...
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fetch the single source contact.vcf from the root
+      fetch('../contact.vcf')
+        .then(response => response.text())
+        .then(vcardData => {
+          // Parse Name
+          const fn = vcardData.match(/^FN:(.*)$/m);
+          if (fn) document.getElementById('vcard-fn').innerText = fn[1].trim();
+
+          // Parse Title & Organization
+          const title = vcardData.match(/^TITLE:(.*)$/m);
+          if (title) document.getElementById('vcard-title').innerText = title[1].trim();
+
+          const org = vcardData.match(/^ORG:(.*)$/m);
+          if (org) document.getElementById('vcard-org').innerText = org[1].trim();
+
+          // Parse Email
+          const email = vcardData.match(/^EMAIL.*:(.*)$/m);
+          if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
+
+          // Parse URLs
+          const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/m);
+          if (linkedin) document.getElementById('vcard-linkedin').href = linkedin[1].trim();
+
+          const faculty = vcardData.match(/^URL;TYPE=Faculty:(.*)$/m);
+          if (faculty) document.getElementById('vcard-faculty').href = faculty[1].trim();
+
+          const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/m);
+          if (ai4da) document.getElementById('vcard-ai4da').href = ai4da[1].trim();
+
+          // Parse Address & Phone
+          const adr = vcardData.match(/^ADR.*:;;(.*)$/m);
+          const tel = vcardData.match(/^TEL.*:(.*)$/m);
+          
+          let addressHTML = "";
+          if (adr) {
+            addressHTML += adr[1].split(';').filter(Boolean).join('<br>');
+          }
+          if (tel) {
+            addressHTML += "<br>Phone: " + tel[1].trim();
+          }
+          if (addressHTML) {
+            document.getElementById('vcard-address').innerHTML = addressHTML;
+          }
+        })
+        .catch(err => console.error("Error reading contact.vcf file:", err));
+    });
+  </script>
+
+</body>
+</html>
