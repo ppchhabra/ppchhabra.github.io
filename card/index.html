@@ -36,14 +36,14 @@
   <div class="vcard-box">
     <img src="../img/squaremug.png" alt="Param Chhabra" class="vcard-img">
 
-    <!-- Header Info with Multi-Line Titles -->
+    <!-- Header Info -->
     <div class="vcard-title" id="vcard-fn">PARAM CHHABRA</div>
     <div class="vcard-sub" id="vcard-title">
       Assistant Professor of Operations Management<br>Director of Outreach, AI4DA
     </div>
     <div class="vcard-sub" id="vcard-org">University of Alberta</div>
 
-    <!-- Download button -->
+    <!-- Download Button -->
     <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
 
     <!-- Row 1: Email & LinkedIn -->
@@ -87,12 +87,14 @@
           const fn = vcardData.match(/^FN:(.*)$/im);
           if (fn && fn[1].trim()) document.getElementById('vcard-fn').innerText = fn[1].trim();
 
-          // Parse Title (convert '\n' or '&' into <br> for newline rendering)
+          // Parse Title (converts literal \n, escaped \n, or comma splits into <br>)
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
             const formattedTitle = title[1].trim()
               .replace(/\\n/g, '<br>')
-              .replace(/\s*&\s*/g, '<br>');
+              .replace(/\n/g, '<br>')
+              .replace(/,\s*Director/g, '<br>Director');
+            
             document.getElementById('vcard-title').innerHTML = formattedTitle;
           }
 
