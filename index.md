@@ -66,9 +66,10 @@ Phone: +1(780)492-1145
 
 <style>
 .vcard-box {
-  background-color: #0d0d0d;
-  color: #ffffff;
+  background-color: #f8f9fa;
+  color: #212529;
   padding: 24px;
+  border: 1px solid #e9ecef;
   border-radius: 8px;
   max-width: 420px;
   margin-top: 16px;
@@ -79,22 +80,22 @@ Phone: +1(780)492-1145
   width: 100%;
   max-height: 320px;
   object-fit: cover;
-  filter: grayscale(100%);
   margin-bottom: 16px;
-  border-radius: 4px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
 }
 
 .vcard-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin: 0 0 6px 0;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
   text-transform: uppercase;
-  color: #ffffff !important;
+  color: #212529 !important;
 }
 
 .vcard-sub {
-  color: #aaaaaa;
+  color: #495057;
   font-size: 0.9rem;
   margin: 2px 0;
 }
@@ -107,24 +108,35 @@ Phone: +1(780)492-1145
   padding: 12px 0;
   text-align: center;
   text-decoration: none !important;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.85rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-top: 10px;
-  border-radius: 2px;
+  border-radius: 4px;
   box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
 
 .vcard-btn-primary {
-  background-color: #fecb00;
-  color: #000000 !important;
+  background-color: #212529;
+  color: #ffffff !important;
+  border: 1px solid #212529;
+}
+
+.vcard-btn-primary:hover {
+  background-color: #343a40;
+  border-color: #343a40;
 }
 
 .vcard-btn-outline {
-  background-color: transparent;
-  border: 1px solid #fecb00;
-  color: #fecb00 !important;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  color: #212529 !important;
+}
+
+.vcard-btn-outline:hover {
+  background-color: #e9ecef;
 }
 
 .vcard-grid {
@@ -136,17 +148,18 @@ Phone: +1(780)492-1145
 
 .vcard-label {
   font-size: 0.75rem;
-  color: #777777;
+  color: #6c757d;
   margin-top: 20px;
   letter-spacing: 1px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .vcard-text {
-  font-size: 0.85rem;
-  color: #cccccc;
-  line-height: 1.4;
-  margin-top: 10px;
+  font-size: 0.88rem;
+  color: #495057;
+  line-height: 1.5;
+  margin-top: 8px;
 }
 </style>
 
