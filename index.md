@@ -65,33 +65,78 @@ Phone: +1(780)492-1145
 ### Contact Details
 
 <div class="vcard-box">
-  <img src="img/squaremug.png" alt="Param Chhabra" class="vcard-img">
+  <img src="img/squaremug.png" alt="Profile Photo" class="vcard-img">
 
-  <div class="vcard-title">PARAM CHHABRA</div>
-  <div class="vcard-sub">Assistant Professor of Operations Management</div>
-  <div class="vcard-sub">Director of Outreach, AI4DA</div>
-  <div class="vcard-sub">University of Alberta</div>
+  <!-- Placeholders populated automatically from contact.vcf -->
+  <div class="vcard-title" id="vcard-fn">LOADING...</div>
+  <div class="vcard-sub" id="vcard-title"></div>
+  <div class="vcard-sub" id="vcard-org"></div>
 
+  <!-- Download button linked directly to the same file -->
   <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
 
-  <!-- Row 1: Email & LinkedIn -->
+  <!-- Button Grid -->
   <div class="vcard-grid">
-    <a href="mailto:param.chhabra@ualberta.ca" class="vcard-btn vcard-btn-outline">EMAIL</a>
-    <a href="https://www.linkedin.com/in/paramchhabra/" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
+    <a id="vcard-email" href="#" class="vcard-btn vcard-btn-outline">EMAIL</a>
+    <a id="vcard-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">LINKEDIN</a>
   </div>
 
-  <!-- Row 2: AI4DA & Faculty Page -->
   <div class="vcard-grid">
-    <a href="https://apps.ualberta.ca/directory/person/chhabra3" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
+    <a id="vcard-ai4da" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
+    <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
   </div>
-    <a href="https://www.ualberta.ca/en/ai-centre-for-decision-analytics/research/index.html" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">AI4DA</a>
 
   <div class="vcard-label">OFFICE // ADDRESS</div>
-  <div class="vcard-text">
-    Alberta School of Business<br>
-    University of Alberta<br>
-    3-30G Business Building, 11203 Saskatchewan Drive NW<br>
-    Edmonton AB, Canada T6G 2R6<br>
-    Phone: +1 (780) 492-1145
+  <div class="vcard-text" id="vcard-address">
+    Loading address...
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('contact.vcf')
+    .then(response => response.text())
+    .then(vcardData => {
+      // Parse Full Name
+      const fn = vcardData.match(/^FN:(.*)$/m);
+      if (fn) document.getElementById('vcard-fn').innerText = fn[1].trim();
+
+      // Parse Title & Organization
+      const title = vcardData.match(/^TITLE:(.*)$/m);
+      if (title) document.getElementById('vcard-title').innerText = title[1].trim();
+
+      const org = vcardData.match(/^ORG:(.*)$/m);
+      if (org) document.getElementById('vcard-org').innerText = org[1].trim();
+
+      // Parse Email
+      const email = vcardData.match(/^EMAIL.*:(.*)$/m);
+      if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
+
+      // Parse URLs
+      const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/m);
+      if (linkedin) document.getElementById('vcard-linkedin').href = linkedin[1].trim();
+
+      const faculty = vcardData.match(/^URL;TYPE=Faculty:(.*)$/m);
+      if (faculty) document.getElementById('vcard-faculty').href = faculty[1].trim();
+
+      const ai4da = vcardData.match(/^URL;TYPE=AI4DA:(.*)$/m);
+      if (ai4da) document.getElementById('vcard-ai4da').href = ai4da[1].trim();
+
+      // Parse Address & Phone
+      const adr = vcardData.match(/^ADR.*:;;(.*)$/m);
+      const tel = vcardData.match(/^TEL.*:(.*)$/m);
+      
+      let addressHTML = "";
+      if (adr) {
+        addressHTML += adr[1].split(';').filter(Boolean).join('<br>');
+      }
+      if (tel) {
+        addressHTML += "<br>Phone: " + tel[1].trim();
+      }
+      if (addressHTML) {
+        document.getElementById('vcard-address').innerHTML = addressHTML;
+      }
+    })
+    .catch(err => console.error("Error reading contact.vcf file:", err));
+});
+</script>
