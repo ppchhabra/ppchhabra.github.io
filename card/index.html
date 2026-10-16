@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Prevent cached responses when updating contact.vcf -->
+  <!-- Prevent stale cached versions when updating contact.vcf -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -48,7 +48,7 @@
     <div class="vcard-sub" id="vcard-org"></div>
 
     <!-- Download Button -->
-    <a href="card/contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
+    <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download="Param_Chhabra.vcf">ADD TO CONTACTS</a>
 
     <!-- Row 1: Email & LinkedIn -->
     <div class="vcard-grid">
@@ -76,7 +76,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Fetch contact.vcf dynamically bypassing browser caching
-      fetch('card/contact.vcf?v=' + new Date().getTime())
+      fetch('contact.vcf?v=' + new Date().getTime())
         .then(response => {
           if (!response.ok) throw new Error("Could not load contact.vcf file.");
           return response.text();
@@ -89,14 +89,18 @@
             document.title = fn[1].trim() + " | Contact";
           }
 
-          // Parse Title (Splits at semicolons ';' into line breaks)
+          // Parse Title (converts semicolons ;, escaped \;, \n, and \\n to <br>)
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
             const formattedTitle = title[1].trim()
-            .split(';')
-            .map(t => t.trim())
-            .filter(Boolean)
-            .join('<br>');
+              .replace(/\\;/g, ';')
+              .replace(/\\\\n/g, ';')
+              .replace(/\\n/g, ';')
+              .split(';')
+              .map(t => t.trim())
+              .filter(Boolean)
+              .join('<br>');
+
             document.getElementById('vcard-title').innerHTML = formattedTitle;
           }
 
@@ -144,6 +148,7 @@
           let addressHTML = "";
           if (adrMatch && adrMatch[1].trim()) {
             addressHTML = adrMatch[1]
+              .replace(/\\;/g, ';')
               .split(';')
               .map(s => s.trim())
               .filter(Boolean)
