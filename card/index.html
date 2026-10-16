@@ -89,16 +89,14 @@
             document.title = fn[1].trim() + " | Contact";
           }
 
-          // Parse Title (Splits at semicolons ';' or '\n' into line breaks)
+          // Parse Title (Splits at semicolons ';' into line breaks)
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
             const formattedTitle = title[1].trim()
-              .replace(/\\n/g, ';')
-              .split(';')
-              .map(t => t.trim())
-              .filter(Boolean)
-              .join('<br>');
-
+            .split(';')
+            .map(t => t.trim())
+            .filter(Boolean)
+            .join('<br>');
             document.getElementById('vcard-title').innerHTML = formattedTitle;
           }
 
