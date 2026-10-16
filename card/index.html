@@ -20,6 +20,15 @@
       margin-top: 0;
       width: 100%;
     }
+    .vcard-website {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .vcard-website a {
+      color: #212529;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -32,8 +41,8 @@
     <div class="vcard-sub" id="vcard-title"></div>
     <div class="vcard-sub" id="vcard-org"></div>
 
-    <!-- Links directly to the root contact.vcf -->
-    <a href="../contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
+    <!-- Download link -->
+    <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
 
     <!-- Action Buttons -->
     <div class="vcard-grid">
@@ -46,16 +55,22 @@
       <a id="vcard-faculty" href="#" target="_blank" rel="noopener noreferrer" class="vcard-btn vcard-btn-outline">FACULTY PAGE</a>
     </div>
 
+    <!-- Office & Address -->
     <div class="vcard-label">OFFICE // ADDRESS</div>
     <div class="vcard-text" id="vcard-address">
       Loading address...
+    </div>
+
+    <!-- Website link at bottom -->
+    <div class="vcard-label">WEBSITE</div>
+    <div class="vcard-website" id="vcard-website">
+      <a href="#" target="_blank" rel="noopener noreferrer" id="vcard-web-link">Loading website...</a>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Fetch the single source contact.vcf from the root
-      fetch('../contact.vcf')
+      fetch('contact.vcf')
         .then(response => response.text())
         .then(vcardData => {
           // Parse Name
@@ -73,7 +88,16 @@
           const email = vcardData.match(/^EMAIL.*:(.*)$/m);
           if (email) document.getElementById('vcard-email').href = "mailto:" + email[1].trim();
 
-          // Parse URLs
+          // Parse Website URL
+          const website = vcardData.match(/^URL;TYPE=(WORK|Website):(.*)$/m);
+          if (website) {
+            const webUrl = website[2].trim();
+            const webLinkEl = document.getElementById('vcard-web-link');
+            webLinkEl.href = webUrl;
+            webLinkEl.innerText = webUrl.replace(/^https?:\/\//, '');
+          }
+
+          // Parse Social & Academic URLs
           const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/m);
           if (linkedin) document.getElementById('vcard-linkedin').href = linkedin[1].trim();
 
