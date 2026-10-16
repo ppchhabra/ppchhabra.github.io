@@ -153,6 +153,10 @@ share-links-active:
 
 # --- Misc --- #
 
+# Custom JS files to load across the site
+js-scripts:
+  - "js/vcard-parser.js"
+
 # Facebook App ID
 # fb_app_id: ""
 
