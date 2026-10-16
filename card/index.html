@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Cache Control Meta Tags to force instant updates on mobile/NFC taps -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <title>Param Chhabra | Contact</title>
   <link rel="stylesheet" href="../css/main.css">
   <style>
@@ -76,7 +82,8 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('contact.vcf')
+      // Append query parameter ?v=timestamp to bypass GitHub CDN caching
+      fetch('contact.vcf?v=' + new Date().getTime())
         .then(response => {
           if (!response.ok) throw new Error("VCF load failed");
           return response.text();
@@ -120,7 +127,7 @@
             webLinkEl.innerText = webUrl.replace(/^https?:\/\//, '');
           }
 
-          // Parse Social & Academic Links safely
+          // Parse Social Links
           const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/im);
           if (linkedin && linkedin[1].trim()) {
             document.getElementById('vcard-linkedin').href = linkedin[1].trim();
