@@ -70,6 +70,7 @@ Phone: +1(780)492-1145
   <!-- Placeholders populated automatically from contact.vcf -->
   <div class="vcard-title" id="vcard-fn">LOADING...</div>
   <div class="vcard-sub" id="vcard-title"></div>
+  <div class="vcard-sub" id="site-vcard-subtitle"></div>
   <div class="vcard-sub" id="vcard-org"></div>
 
   <!-- Download button linked directly to the same file -->
