@@ -73,7 +73,7 @@ Phone: +1(780)492-1145
   <div class="vcard-sub" id="vcard-org"></div>
 
   <!-- Download button linked directly to the same file -->
-  <a href="contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
+  <a href="card/contact.vcf" class="vcard-btn vcard-btn-primary" download>ADD TO CONTACTS</a>
 
   <!-- Button Grid -->
   <div class="vcard-grid">
@@ -99,7 +99,7 @@ Phone: +1(780)492-1145
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('contact.vcf')
+  fetch('card/contact.vcf')
     .then(response => response.text())
     .then(vcardData => {
       // Parse Full Name
