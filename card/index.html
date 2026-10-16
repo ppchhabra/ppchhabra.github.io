@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Prevent cached responses when updating contact.vcf -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -82,7 +81,7 @@
           return response.text();
         })
         .then(vcardData => {
-          // Parse Name (FN)
+          // Parse Name
           const fn = vcardData.match(/^FN.*:(.*)$/im);
           if (fn && fn[1].trim()) {
             document.getElementById('vcard-fn').innerText = fn[1].trim();
@@ -95,8 +94,8 @@
             document.getElementById('vcard-title').innerText = title[1].trim();
           }
 
-          // Parse Subtitle / Note (flexible match for NOTE or X-SUBTITLE with optional parameters)
-          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE|TITLE2)(?:;[^:]*)?:(.*)$/im);
+          // Parse Subtitle from NOTE
+          const subtitle = vcardData.match(/^(?:NOTE|X-SUBTITLE)(?:;[^:]*)?:(.*)$/im);
           if (subtitle && subtitle[1].trim()) {
             document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
             document.getElementById('vcard-subtitle').style.display = 'block';
@@ -104,7 +103,7 @@
             document.getElementById('vcard-subtitle').style.display = 'none';
           }
 
-          // Parse Organization (ORG)
+          // Parse Organization
           const org = vcardData.match(/^ORG.*:(.*)$/im);
           if (org && org[1].trim()) {
             document.getElementById('vcard-org').innerText = org[1].trim().split(';')[0];
@@ -125,7 +124,7 @@
             webLinkEl.innerText = webUrl.replace(/^https?:\/\//, '');
           }
 
-          // Parse Custom Action Button URLs
+          // Parse Custom Action Buttons
           const linkedin = vcardData.match(/^URL;TYPE=LinkedIn:(.*)$/im);
           if (linkedin && linkedin[1].trim()) {
             document.getElementById('vcard-linkedin').href = linkedin[1].trim();
@@ -141,7 +140,7 @@
             document.getElementById('vcard-ai4da').href = ai4da[1].trim();
           }
 
-          // Parse Address & Phone Number
+          // Parse Address & Phone
           const adrMatch = vcardData.match(/^ADR.*:(.*)$/im);
           const telMatch = vcardData.match(/^TEL.*:(.*)$/im);
           
