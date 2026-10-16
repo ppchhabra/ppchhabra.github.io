@@ -156,7 +156,7 @@ Phone: +1(780)492-1145
 }
 
 .vcard-text {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: #495057;
   line-height: 1.5;
   margin-top: 8px;
