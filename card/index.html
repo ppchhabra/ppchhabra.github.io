@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Prevent stale cached versions when updating contact.vcf -->
+  <!-- Prevent cached responses when updating contact.vcf -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -42,9 +42,10 @@
   <div class="vcard-box">
     <img src="../img/squaremug.png" alt="Profile" class="vcard-img">
 
-    <!-- Header Info (Blank placeholders populated by contact.vcf) -->
+    <!-- Header Info -->
     <div class="vcard-title" id="vcard-fn"></div>
     <div class="vcard-sub" id="vcard-title"></div>
+    <div class="vcard-sub" id="vcard-subtitle"></div>
     <div class="vcard-sub" id="vcard-org"></div>
 
     <!-- Download Button -->
@@ -75,7 +76,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Fetch contact.vcf dynamically bypassing browser caching
       fetch('contact.vcf?v=' + new Date().getTime())
         .then(response => {
           if (!response.ok) throw new Error("Could not load contact.vcf file.");
@@ -89,19 +89,18 @@
             document.title = fn[1].trim() + " | Contact";
           }
 
-          // Parse Title (converts semicolons ;, escaped \;, \n, and \\n to <br>)
+          // Parse Main Title
           const title = vcardData.match(/^TITLE:(.*)$/im);
           if (title && title[1].trim()) {
-            const formattedTitle = title[1].trim()
-              .replace(/\\;/g, ';')
-              .replace(/\\\\n/g, ';')
-              .replace(/\\n/g, ';')
-              .split(';')
-              .map(t => t.trim())
-              .filter(Boolean)
-              .join('<br>');
+            document.getElementById('vcard-title').innerText = title[1].trim();
+          }
 
-            document.getElementById('vcard-title').innerHTML = formattedTitle;
+          // Parse Subtitle (checks X-SUBTITLE or NOTE field in vcard)
+          const subtitle = vcardData.match(/^(?:X-SUBTITLE|NOTE):(.*)$/im);
+          if (subtitle && subtitle[1].trim()) {
+            document.getElementById('vcard-subtitle').innerText = subtitle[1].trim();
+          } else {
+            document.getElementById('vcard-subtitle').style.display = 'none';
           }
 
           // Parse Organization (ORG)
